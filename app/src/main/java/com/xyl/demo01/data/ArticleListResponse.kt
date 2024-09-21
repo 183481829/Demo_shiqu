@@ -1,6 +1,6 @@
 package com.xyl.demo01.data
 
-data class ArticleList(
+data class ArticleListResponse(
     val total: Int,
     val list: List<Article>,
     val pageNum: Int,

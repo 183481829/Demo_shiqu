@@ -4,6 +4,167 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditIinformationActivity">
+    tools:context=".activity.EditInformationActivity">
+    <!-- Toolbar with transparent background -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="0dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Back arrow -->
+        <TextView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="&lt;"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_gravity="start"
+            android:layout_marginEnd="16dp" />
+
+        <!-- Title text in the center -->
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="编辑信息"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- 头像 -->
+    <ImageView
+        android:id="@+id/avatarImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_avatar"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shape_circle"
+        android:scaleType="centerCrop"
+        android:clipToOutline="true"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 性别选择 -->
+    <RadioGroup
+        android:id="@+id/genderRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/avatarImageView"
+        app:layout_constraintBottom_toTopOf="@+id/nicknameEditText"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- 男生按钮 -->
+        <RadioButton
+            android:id="@+id/boyRadioButton"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_sex_radio_button"
+            android:button="@null"
+            android:drawableStart="@drawable/ic_boy"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="男生"
+            android:textColor="@android:color/black" />
+
+        <!-- 间隙 -->
+        <View
+            android:layout_width="20dp"
+            android:layout_height="wrap_content" />
+
+        <!-- 女生按钮 -->
+        <RadioButton
+            android:id="@+id/girlRadioButton"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_sex_radio_button"
+            android:button="@null"
+            android:drawableStart="@drawable/ic_girl"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="女生"
+            android:textColor="@android:color/black" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="89dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="昵称"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/nicknameEditText"
+        app:layout_constraintEnd_toStartOf="@id/nicknameEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/genderRadioGroup" />
+    <!-- 昵称输入框 -->
+    <EditText
+        android:id="@+id/nicknameEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_input"
+        android:padding="8dp"
+        android:hint="来填写你的昵称吧~"
+        app:layout_constraintTop_toBottomOf="@id/tv_nickname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+    <TextView
+        android:id="@+id/tv_birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="你的生日"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/birthdayTextView"
+        app:layout_constraintTop_toBottomOf="@id/nicknameEditText"
+        app:layout_constraintStart_toStartOf="parent"
+         />
+
+    <!-- 生日选择 -->
+    <TextView
+        android:id="@+id/birthdayTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_input"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_birthday"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <!-- 完成按钮 -->
+    <Button
+        android:id="@+id/completeButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="完成"
+        android:backgroundTint="@color/blue"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8"
+        android:layout_marginBottom="45dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,15 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="CommonKnowledgeActivity">
+        <State />
+      </entry>
+      <entry key="EditInformationActivity ">
+        <State />
+      </entry>
+      <entry key="LibraryActivity">
+        <State />
+      </entry>
       <entry key="MainActivity">
         <State />
       </entry>

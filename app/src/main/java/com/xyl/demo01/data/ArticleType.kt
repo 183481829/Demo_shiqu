@@ -1,5 +1,5 @@
 package com.xyl.demo01.data
 
-data class Category(
+data class ArticleType(
     val id: Int,
     val type: String)
