@@ -151,6 +151,7 @@ class ArticleContentAdapter( private val articleContentList: List<ArticleContent
 
                     // 设置高亮后的文本
                     sentenceTextView.text = spannableString
+
                 }
 
                 // 每隔100毫秒检查一次
